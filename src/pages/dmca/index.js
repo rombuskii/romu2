@@ -6,7 +6,7 @@ const DMCA = () => {
         <h1 className='text-xl sm:text-4xl'>DMCA Takedown Request</h1>
          <p className='text-md sm:text-2xl'>
 
-Our anime streaming website provides links to content hosted by third-party sites. We do not host any of the anime or other content ourselves, and we do not have control over the content hosted on these third-party sites. We simply provide links to these sites as a service to our users.
+Our website provides links to content hosted by third-party sites. We do not host any of the anime or other content ourselves, and we do not have control over the content hosted on these third-party sites. We simply provide links to these sites as a service to our users.
 
 We take copyright infringement very seriously and will promptly remove any content that violates copyright laws or the Digital Millennium Copyright Act (DMCA) when we are notified of such violations. If you believe that any content on our site infringes your copyright or the copyright of someone you represent, please send us a DMCA takedown notice.
 
