@@ -17,7 +17,7 @@ Identification of the material that you claim is infringing and that you want re
 Your name, address, telephone number, and email address.
 A statement that you have a good faith belief that the use of the copyrighted material is not authorized by the copyright owner, its agent, or the law.
 A statement that the information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.
-Please send your DMCA takedown notice to rombuski@gmail.com. We will promptly investigate and take appropriate action in accordance with the DMCA.
+Please send your DMCA takedown notice to rombuski@gmail.com . We will promptly investigate and take appropriate action in accordance with the DMCA.
         </p>
     </div>
   )
