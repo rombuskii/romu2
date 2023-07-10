@@ -136,7 +136,7 @@ const WatchPage = ({episode, episodes}) => {
         <div style={{'borderRadius': '25px'}}  className='mx-auto'>
         <ReactPlayer onEnded={nextEpisode} playing={true}  width={''} height={'100%'} url={episode?.sources ? episode.sources[3].url : router.replace('/')} controls/>
         </div> 
-            <div onScroll={handleScroll} className='w-full border-black rounded-xl h-screen overflow-scroll bg-black p-4'>
+            <div onScroll={handleScroll} className='w-full border-black rounded-xl h-screen overflow-scroll bg-gradient-to-b from-gray-500 to transparent p-4'>
             <h1 className='w-full border-b my-2 block uppercase'>Comments</h1>
             <form onSubmit={comment}>
                 <input placeholder='Type away!' className='w-full p-1 bg-gray-600 border-black rounded-lg' type="text" value={input} onChange={e => setInput(e.target.value)}/>
