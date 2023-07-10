@@ -21,7 +21,7 @@ export async function getStaticPaths() {
     response = await fetch(`https://api.consumet.org/anime/gogoanime/watch/${params.id}`);
     list = await fetch(`https://api.consumet.org/anime/gogoanime/info/${params.id.substring(0, params.id.lastIndexOf('episode') - 1)}`);
   } catch (err) {
-    console.log("Something went wrong")
+    return;
   }
   
     // Finally we return the result
@@ -36,7 +36,6 @@ export async function getStaticPaths() {
 
 const WatchPage = ({episode, episodes}) => {
     const {currentUser} = useAuth();
-    console.log(currentUser)
     const router = useRouter()
     const [isLoading, setIsLoading] = useState(true);
     const [input, setInput] = useState('')
@@ -48,7 +47,6 @@ const WatchPage = ({episode, episodes}) => {
         const initial = name.substring(0, name.lastIndexOf('-') + 1)
         const next = initial + number
         if(episodes.episodes.map((episode) => episode.id).indexOf(name) < episodes.episodes.length - 1) {
-            console.log(episodes.episodes.length - 1)
             router.replace(`/watch/${next}`)
         } else {
             router.replace(`/anime/${name.substring(0, name.lastIndexOf('episode') - 1)}`)
@@ -63,7 +61,6 @@ const WatchPage = ({episode, episodes}) => {
         }
         const initial = name.substring(0, name.lastIndexOf('-') + 1)
         const next = initial + number
-        console.log(next)
         router.replace(`/watch/${next}`)
     }
 
@@ -79,15 +76,15 @@ const WatchPage = ({episode, episodes}) => {
                 setComments(result.comment);
               } else {
                 // Handle the case when the 'comment' property is missing
-                console.log("The 'comment' property is missing in the result");
+                return;
               }
             } else {
               // Handle the case when the document doesn't exist
-              console.log("The document does not exist");
+              return;
             }
           } catch (error) {
             // Handle any potential errors during the retrieval
-            console.error("Error retrieving comments:", error);
+            return;
           }
     }
 
@@ -104,7 +101,7 @@ const WatchPage = ({episode, episodes}) => {
         const target = event.target;
 
         if(target.scrollHeight - target.scrollTop === target.clientHeight) {
-            console.log('At da bottom!')
+            return;
         } 
     }
 
@@ -144,7 +141,6 @@ const WatchPage = ({episode, episodes}) => {
             <form onSubmit={comment}>
                 <input placeholder='Type away!' className='w-full p-1 bg-gray-600 border-black rounded-lg' type="text" value={input} onChange={e => setInput(e.target.value)}/>
             </form>
-            {console.log(comments)}
             {isLoading ? <div className='w-full h-screen flex justify-center items-center'><i className="mx-auto text-2xl sm:text-5xl fa-solid fa-arrows-spin fa-spin"></i></div> : comments?.map((comment) =>// {
                // return (
                     <Editable id={name} user={comment.user} content={comment.content} posted={comment.posted}/>

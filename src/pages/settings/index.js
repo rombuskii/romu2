@@ -7,7 +7,6 @@ import { useAuth } from '@/context/AuthContext'
 const Settings = () => {
     const {currentUser} = useAuth();
     const [imageUpload, setImageUpload] = useState(null)
-    console.log(currentUser)
 
     const upload = (e) => {
         let imgUrl;
@@ -20,12 +19,11 @@ const Settings = () => {
                 response.items.forEach((item) => {
                     getDownloadURL(item).then((url) => {
                         imgUrl = [url]
-                        console.log(imgUrl)
                         updateProfile(currentUser, {photoURL: imgUrl[0] })
                         .then(() => {
-                            console.log('success')
+                            return;
                         })
-                        .catch(error => console.log(error)) 
+                        .catch(error => null) 
                     })
                 }
                 )

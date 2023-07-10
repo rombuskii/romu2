@@ -23,13 +23,13 @@ const AnimeTile = ({setFavorites, name, image, id}) => {
             }
             result.id.map(entry => entry.id).includes(id) ? setLiked(true) : setLiked(false);
         } else {
-            console.log("The 'id' property is missing in the result");
+            return;
         }
     } else {
-        console.log("The document does not exist");
+        return;
     }
 } catch(error) {
-    console.error("Error retrieving comments:", error);
+    return;
 }
     }
 

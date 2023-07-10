@@ -6,7 +6,6 @@ import Image from 'next/image'
 const UserDashboard = ({topAnime}) => {
   const {currentUser} = useAuth();
   const [favorites, setFavorites] = useState([])
-  console.log("Favorites:", favorites)
 
   return (
     <div>

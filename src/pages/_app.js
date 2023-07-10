@@ -19,7 +19,6 @@ export default function App({ Component, pageProps }) {
     });
 
     const handleStart = (url) => {
-      console.log(`Loading: ${url}`)
       NProgress.start()
     }
 

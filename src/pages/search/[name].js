@@ -19,7 +19,7 @@ export async function getStaticProps(context) {
     try {
     response = await fetch(`https://api.consumet.org/anime/gogoanime/${params.name}`);
 } catch (err) {
-    console.log('Something went wrong')
+    return;
 }
   
     // Finally we return the result
