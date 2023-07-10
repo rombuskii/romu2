@@ -8,7 +8,6 @@ const Settings = () => {
     const {currentUser} = useAuth();
     const [imageUpload, setImageUpload] = useState(null)
     const [msg, setMsg] = useState('')
-    console.log(currentUser)
 
     const upload = (e) => {
         e.preventDefault()
