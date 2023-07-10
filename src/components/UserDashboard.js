@@ -23,7 +23,7 @@ const UserDashboard = ({topAnime}) => {
       <div className='w-full flex flex-row flex-nowrap justify-start items-center gap-x-20 overflow-auto'>
         {favorites.length == 0 ? <i className="m-auto fa-solid fa-arrows-spin fa-spin"></i> : favorites?.map((favorite) => {
           return (
-            <div className='hover:cursor-pointer p-2'>
+            <div className='text-center hover:cursor-pointer p-2'>
               <a href={`/anime/${favorite.id}`}>
             <div className='relative w-60 h-60'>
                 <Image className='rounded-2xl mx-auto duration-300 py-1 hover:scale-110' src={favorite.image} fill objectFit='contain' alt="Anime Photo"/>
