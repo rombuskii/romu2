@@ -6,7 +6,7 @@ import UserDashboard from '../components/UserDashboard'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
   const response = await fetch('https://api.consumet.org/anime/gogoanime/top-airing', { next: { revalidate: 10 } });
 

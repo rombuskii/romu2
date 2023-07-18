@@ -4,16 +4,9 @@ import AnimeTile from '@/components/AnimeTile';
 import { useAuth } from '@/context/AuthContext';
 
 
-export async function getStaticPaths() {
-    return {
-      paths: [
-        { params: { name: 'naruto' } },
-      ],
-      fallback: true,
-    }
-  }
 
-export async function getStaticProps(context) {
+
+export async function getServerSideProps(context) {
     let response;
     const {params} = context
     try {

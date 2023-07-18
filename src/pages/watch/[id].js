@@ -7,14 +7,8 @@ import { db } from '../../../firebase';
 import Editable from '@/components/Editable';
 
 
-export async function getStaticPaths() {
-    return {
-      paths: [],
-      fallback: true,
-    }
-  }
   
-  export async function getStaticProps(context) {
+  export async function getServerSideProps(context) {
     let response, list;
     const {params} = context
     try {
